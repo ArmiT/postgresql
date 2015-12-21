@@ -18,7 +18,7 @@ before_install:
   - sudo apt-get autoremove -y -qq
   - sudo rm -rf /etc/postgresql
   - sudo rm -rf /var/lib/postgresql
-  - sudo rm /etc/apt/sources.list.d/pgdg-source.list
+  - sudo rm -f /etc/apt/sources.list.d/pgdg-source.list
   # Install some dependencies
   - sudo apt-get update -qq -y
   - sudo apt-get install -qq -y python-apt python-pycurl locales
