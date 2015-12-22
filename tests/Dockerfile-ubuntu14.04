@@ -4,10 +4,10 @@ MAINTAINER anxs
 RUN apt-get update -qq
 RUN apt-get install -qq python-apt python-pycurl python-pip python-dev locales
 RUN echo 'en_US.UTF-8 UTF-8' > /var/lib/locales/supported.d/local
-RUN pip install -q ansible==1.8.4
+RUN pip install -q ansible==1.9.4
 
 WORKDIR /tmp/postgresql
 COPY  .  /tmp/postgresql
 
 RUN echo localhost > inventory
-RUN ansible-playbook -i inventory -c local --sudo tests/playbook.yml
+RUN ansible-playbook -i inventory -c local --become tests/playbook.yml
